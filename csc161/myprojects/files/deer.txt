@@ -1,0 +1,28 @@
+City of Red
+37.81 1137
+Boro of Orange
+1.77 1071
+Yellow City
+83.13 1034
+Green Town
+4.79 2819
+Blueville
+45.71 1514
+Indigo Village
+4.15 442
+Violeton
+9.27 2225
+Redburg
+7.46 977
+Orange Park
+1.36 533
+Yellow Falls
+18.75 4556
+Green Haven
+6.12 242
+Blue City
+44.69 1979
+Indigo Township
+3.56 365
+Violet Point
+35.27 4161
