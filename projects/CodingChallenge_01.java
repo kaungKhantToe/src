@@ -24,6 +24,7 @@ public class CodingChallenge_01 {
             }
             //! alert
             //? Looks nice right
+            //* Important */
         }
         wordCount ++; // Since the last word cannot be counted by looking for null characters (like we did above) , we will have to add one ourselves 
         Double S = (double)(sentenceCount)/wordCount*100;
