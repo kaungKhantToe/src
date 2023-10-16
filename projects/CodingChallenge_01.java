@@ -19,9 +19,11 @@ public class CodingChallenge_01 {
                 letterCount--; // Because we don't want to count null characters as actual letters
             }
             if(userInput.charAt(i) == '.' || userInput.charAt(i) == '!' || userInput.charAt(i) == '?' ){
-                sentenceCount++;// most sentences end with these characters
+                sentenceCount++;// Most sentences end with these characters
                 letterCount--; 
             }
+            //! alert
+            //? Looks nice right
         }
         wordCount ++; // Since the last word cannot be counted by looking for null characters (like we did above) , we will have to add one ourselves 
         Double S = (double)(sentenceCount)/wordCount*100;
