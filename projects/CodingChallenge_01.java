@@ -39,3 +39,5 @@ public class CodingChallenge_01 {
     }
 }
 
+//Output
+//

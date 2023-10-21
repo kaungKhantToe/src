@@ -4,8 +4,8 @@ import java.util.*;
 import java.io.*;
 
 public class bank {
-    public static String[] firstName = new String[7];
-    public static String[] lastName = new String[7];
+    public static String[] firstName = new String[7]; // this is an array 
+    public static String[] lastName = new String[7]; // array
     public static int[] accNum = new int[7];
     public static double[] balance = new double[7];
     public static double[] newBalance = new double[7];
