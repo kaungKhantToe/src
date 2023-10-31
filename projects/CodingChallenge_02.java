@@ -25,7 +25,7 @@ public class CodingChallenge_02 {
                 System.out.print("Player 2 wins!");
             }
             input.close();
-
+        // catch block
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -34,10 +34,8 @@ public class CodingChallenge_02 {
     private static int Scrabble(String playerChoice) {
         int point = 0;
         playerChoice.toCharArray(); // converting String to char Array to check via for loop
-        // the following loop will check every element in the array for certain
-        // characters
-        // If a character in a sentence is equal to these characters, will add
-        // respective points to the score
+        // the following loop will check every element in the array for certain characters
+        // If a character in a sentence is equal to these characters, will add respective points to the score
         for (int i = 0; i < playerChoice.length(); i++) {
             if (playerChoice.charAt(i) == 'Q' || playerChoice.charAt(i) == 'q'
                     || playerChoice.charAt(i) == 'Z' || playerChoice.charAt(i) == 'z') {
