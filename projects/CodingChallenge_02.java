@@ -12,12 +12,12 @@ public class CodingChallenge_02 {
             System.out.print("Player 2: ");
             String choiceOfPlayerTwo = input.next();
             // sending to method
-            scrabble(choiceOfPlayerOne);
-            scrabble(choiceOfPlayerTwo);
+            Scrabble(choiceOfPlayerOne);
+            Scrabble(choiceOfPlayerTwo);
             // print statements according to conditions
-            if (scrabble(choiceOfPlayerOne) > scrabble(choiceOfPlayerTwo)) {
+            if (Scrabble(choiceOfPlayerOne) > Scrabble(choiceOfPlayerTwo)) {
                 System.out.print("Player 1 wins!");
-            } else if (scrabble(choiceOfPlayerOne) == scrabble(choiceOfPlayerTwo)) {
+            } else if (Scrabble(choiceOfPlayerOne) == Scrabble(choiceOfPlayerTwo)) {
                 System.out.print("Tie!");
             } else {
                 System.out.print("Player 2 wins!");
@@ -28,7 +28,7 @@ public class CodingChallenge_02 {
         }
     }
 
-    private static int scrabble(String playerChoice) {
+    private static int Scrabble(String playerChoice) {
         int point = 0;
         playerChoice.toCharArray(); // converting String to char Array to check via for loop
         // the following loop will check every element in the array for certain
