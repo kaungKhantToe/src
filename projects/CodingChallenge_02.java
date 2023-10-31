@@ -14,7 +14,7 @@ public class CodingChallenge_02 {
             // sending to method
             scrabble(choiceOfPlayerOne);
             scrabble(choiceOfPlayerTwo);
-            // print statements according to conditions 
+            // print statements according to conditions
             if (scrabble(choiceOfPlayerOne) > scrabble(choiceOfPlayerTwo)) {
                 System.out.print("Player 1 wins!");
             } else if (scrabble(choiceOfPlayerOne) == scrabble(choiceOfPlayerTwo)) {
