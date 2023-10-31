@@ -11,9 +11,11 @@ public class CodingChallenge_02 {
             String choiceOfPlayerOne = input.next();
             System.out.print("Player 2: ");
             String choiceOfPlayerTwo = input.next();
-            // sending to method
-            Scrabble(choiceOfPlayerOne);
-            Scrabble(choiceOfPlayerTwo);
+            // sending each input to a method that will return int value
+            if (choiceOfPlayerOne != null && choiceOfPlayerTwo != null) {
+                Scrabble(choiceOfPlayerOne);
+                Scrabble(choiceOfPlayerTwo);
+            }
             // print statements according to conditions
             if (Scrabble(choiceOfPlayerOne) > Scrabble(choiceOfPlayerTwo)) {
                 System.out.print("Player 1 wins!");
@@ -23,6 +25,7 @@ public class CodingChallenge_02 {
                 System.out.print("Player 2 wins!");
             }
             input.close();
+
         } catch (Exception e) {
             System.out.print(e);
         }
