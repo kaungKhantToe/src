@@ -12,7 +12,7 @@ public class bank {
     public static int[] countNum = new int[7];
 
     public static void main(String[] args) throws IOException {
-        File file = new File("C:/temp/mc/src/csc161/myprojects/detail.txt");
+        File file = new File("C:/temp/mc/src/csc161/myprojects/files/detail.txt");
         Scanner input2 = new Scanner(file);
         int count = 0;
         while (input2.hasNext()) {
