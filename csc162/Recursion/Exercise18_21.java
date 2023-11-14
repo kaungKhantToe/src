@@ -8,6 +8,7 @@ public class Exercise18_21 {
         System.out.print("Enter a decimal integer: ");
         int dec = input.nextInt();
         System.out.print(dec + " decimal is binary "+ dec2Bin(dec));
+        input.close();
     }
 
     public static String dec2Bin(int dec) {
