@@ -8,6 +8,7 @@ public class Exercise18_11 {
         System.out.print("Enter an integer: ");
         int number = input.nextInt();
         System.out.print("The sum of digits in " + number + " is " + sumDigits(number));
+        input.close();
     }
 
     public static int sumDigits(long n) {

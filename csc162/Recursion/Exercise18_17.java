@@ -11,6 +11,7 @@ public class Exercise18_17 {
         System.out.print("Enter a character: ");
         char c = input.nextLine().trim().charAt(0);
         System.out.println(c + " appears " + charCount(charsInString, c) + " times");
+        input.close();
     }
 
     public static int charCount(char[] chars, char ch) {

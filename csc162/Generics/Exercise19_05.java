@@ -27,6 +27,7 @@ public class Exercise19_05 {
         Integer maxNumber = max(numbers);
         
         System.out.println("The max number is " + maxNumber);
+        input.close();
         
     }
 }
