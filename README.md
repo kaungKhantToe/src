@@ -2,7 +2,7 @@
 
 ☕ This repository consists of ...many java programs that I've written in college.
 
-☕ These projects include ...mostly of assignments from classes and clubs aliek as well as some custom projects
+☕ These projects include ...many assignments from classes and clubs alike as well as some custom projects
 
 😊 Any and every criticism or advice would be highly appreciated.
 
