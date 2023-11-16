@@ -1,5 +1,3 @@
-package projects;
-
 import java.util.Scanner;
 
 public class CodingChallenge_02 {
