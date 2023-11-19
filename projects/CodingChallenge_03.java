@@ -102,7 +102,7 @@ public class CodingChallenge_03 {
             input.close();
         }
     }
-
+    
     /*
      * 1- Compare the candidate's name and each element of the array.
      * 2- If there is a match will return add "1" to "ranks" variable.
