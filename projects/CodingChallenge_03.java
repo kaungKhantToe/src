@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class CodingChallenge_03 {
@@ -13,7 +12,7 @@ public class CodingChallenge_03 {
         /*
          * send the number of voters and the array that contains
          * the names of the candidate to a method called "ballot"
-        */
+         */
         try {
             int numberOfVoters = input.nextInt();
             ballot(numberOfVoters, listOfCandidates);
@@ -30,8 +29,11 @@ public class CodingChallenge_03 {
         String[] rankOneCandidates = new String[numberOfVoters];
         String[] rankTwoCandidates = new String[numberOfVoters];
         String[] rankThreeCandidates = new String[numberOfVoters];
-        
-        // * initializing double variables to hold the points of each candidate 
+
+        /*
+         * initializing double variables to hold the points of each
+         * candidate (usage will be elaborated later in the program)
+         */
         double favorForAlice = 0;
         double favorForBob = 0;
         double favorForCharlie = 0;
@@ -45,8 +47,7 @@ public class CodingChallenge_03 {
              */
             for (int i = 0; i < numberOfVoters; i++) {
                 /*
-                 * 
-                 * 
+                 * will strip and convert any user input to lowercase to avoid errors
                  */
                 System.out.print("Rank 1: ");
                 rankOneCandidates[i] = input.next().strip().toLowerCase();
@@ -60,7 +61,10 @@ public class CodingChallenge_03 {
                 System.out.println(); // *to format the output as depicted in the example
 
             }
-
+            /*
+             * The reason why I created the double variables earlier is to store
+             * the value of each candidate after being sent to the ranking method
+             */
             favorForAlice = ranking(rankOneCandidates, "alice") + 0.5 * ranking(rankTwoCandidates, "alice")
                     + 0.5 * 0.5 * ranking(rankThreeCandidates, "Alice");
 
@@ -83,7 +87,6 @@ public class CodingChallenge_03 {
         } finally {
             input.close();
         }
-
     }
 
     private static int ranking(String[] candidate, String name) {
