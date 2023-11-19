@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 
 public class CodingChallenge_03 {
@@ -9,16 +10,19 @@ public class CodingChallenge_03 {
 
         Scanner input = new Scanner(System.in);
         System.out.print("Number of voters: ");
-
+        /*
+         * send the number of voters and the array that contains
+         * the names of the candidate to a method called "ballot"
+        */
         try {
             int numberOfVoters = input.nextInt();
-            // *
             ballot(numberOfVoters, listOfCandidates);
-
-        } catch (Exception e) {
-            System.out.print(e);
+        } catch (InputMismatchException e) {
+            System.out.print("Please enter a number of Integer value");
+        } finally {
+            input.close();
         }
-        input.close();
+
     }
 
     private static void ballot(int numberOfVoters, String[] listOfCandidates) {
@@ -26,7 +30,8 @@ public class CodingChallenge_03 {
         String[] rankOneCandidates = new String[numberOfVoters];
         String[] rankTwoCandidates = new String[numberOfVoters];
         String[] rankThreeCandidates = new String[numberOfVoters];
-
+        
+        // * initializing double variables to hold the points of each candidate 
         double favorForAlice = 0;
         double favorForBob = 0;
         double favorForCharlie = 0;
@@ -39,6 +44,10 @@ public class CodingChallenge_03 {
              * them in their respective arrays based on the voter's preference
              */
             for (int i = 0; i < numberOfVoters; i++) {
+                /*
+                 * 
+                 * 
+                 */
                 System.out.print("Rank 1: ");
                 rankOneCandidates[i] = input.next().strip().toLowerCase();
 
@@ -61,9 +70,6 @@ public class CodingChallenge_03 {
             favorForCharlie = ranking(rankOneCandidates, "charlie") + 0.5 * ranking(rankTwoCandidates, "charlie")
                     + 0.5 * 0.5 * ranking(rankThreeCandidates, "charlie");
 
-            // System.out.println(favorForAlice);
-            // System.out.println(favorForBob);
-            // System.out.println(favorForCharlie);
             if (Math.max(favorForAlice, Math.max(favorForBob, favorForCharlie)) == favorForAlice) {
                 System.out.println("Alice");
             } else if (Math.max(favorForBob, Math.max(favorForAlice, favorForCharlie)) == favorForBob) {
@@ -73,7 +79,7 @@ public class CodingChallenge_03 {
             }
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         } finally {
             input.close();
         }
