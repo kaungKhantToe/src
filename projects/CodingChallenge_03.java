@@ -39,7 +39,7 @@ public class CodingChallenge_03 {
          * enters either a double value or a string
          */
         catch (InputMismatchException e) {
-            System.out.print("Please enter a number of Integer value");
+            System.out.print("Please enter a number of Integer value...");
         }
         // * The catch block for the custom Exception
         catch (CustomException e) {
