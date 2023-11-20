@@ -20,9 +20,6 @@ public class CodingChallenge_01 {
                 sentenceCount++;// Most sentences end with these characters
                 letterCount--; 
             }
-            //! alert
-            //? Looks nice right
-            //* Important */
         }
         wordCount ++; // Since the last word cannot be counted by looking for null characters (like we did above) , we will have to add one ourselves 
         Double S = (double)(sentenceCount)/wordCount*100;
@@ -36,6 +33,3 @@ public class CodingChallenge_01 {
     }
     }
 }
-
-//Output
-//

@@ -3,10 +3,11 @@ import java.util.*;
 /*
  * Custom Exception class that returns a message if the number of voters is zero
  */
-class ZeroVotersException extends Exception {
-    public ZeroVotersException(String zeroVotersErrorMessage) {
-        super(zeroVotersErrorMessage);
+class CustomException extends Exception {
+    public CustomException(String errorMessage) {
+        super(errorMessage);
     }
+
 }
 
 public class CodingChallenge_03 {
@@ -31,7 +32,7 @@ public class CodingChallenge_03 {
             if (numberOfVoters >= 1) {
                 ballot(numberOfVoters, listOfCandidates);
             } else
-                throw new ZeroVotersException("Zero Voters. Ending Program...");
+                throw new CustomException("Zero Voters. Ending Program...");
         }
         /*
          * This catch block is to catch errors when the user
@@ -41,7 +42,7 @@ public class CodingChallenge_03 {
             System.out.print("Please enter a number of Integer value");
         }
         // * The catch block for the custom Exception
-        catch (ZeroVotersException e) {
+        catch (CustomException e) {
             System.out.println(e.getMessage());
         }
         // * will close the input regardless if there's an error or not
@@ -77,6 +78,7 @@ public class CodingChallenge_03 {
                  * will strip and convert any user input to lowercase to avoid errors
                  */
                 System.out.print("Rank 1: ");
+
                 rankOneCandidates[i] = input.next().strip().toLowerCase();
 
                 System.out.print("Rank 2: ");
@@ -88,6 +90,9 @@ public class CodingChallenge_03 {
                 System.out.println(); // *to format the output as depicted in the example
 
             }
+            verifyCandidateNames(rankOneCandidates);
+            verifyCandidateNames(rankTwoCandidates);
+            verifyCandidateNames(rankThreeCandidates);
             /*
              * 1- The reason why I created the double variables earlier is to store the
              * value of each candidate after being sent to the method name as "rankings".
@@ -101,18 +106,15 @@ public class CodingChallenge_03 {
              * multiplied by 0.5.
              * adding them all together, the total favor for alice will be 2.5.
              */
-            if (rankOneCandidates.length == listOfCandidates.length
-                    && rankTwoCandidates.length == listOfCandidates.length
-                    && rankThreeCandidates.length == listOfCandidates.length) {
-                favorForAlice = rankings(rankOneCandidates, "alice") + 0.5 * rankings(rankTwoCandidates, "alice")
-                        + 0.25 * rankings(rankThreeCandidates, "alice");
+            favorForAlice = rankings(rankOneCandidates, "alice") + 0.5 * rankings(rankTwoCandidates, "alice")
+                    + 0.25 * rankings(rankThreeCandidates, "alice");
 
-                favorForBob = rankings(rankOneCandidates, "bob") + 0.5 * rankings(rankTwoCandidates, "bob")
-                        + 0.25 * rankings(rankThreeCandidates, "bob");
+            favorForBob = rankings(rankOneCandidates, "bob") + 0.5 * rankings(rankTwoCandidates, "bob")
+                    + 0.25 * rankings(rankThreeCandidates, "bob");
 
-                favorForCharlie = rankings(rankOneCandidates, "charlie") + 0.5 * rankings(rankTwoCandidates, "charlie")
-                        + 0.25 * rankings(rankThreeCandidates, "charlie");
-            }
+            favorForCharlie = rankings(rankOneCandidates, "charlie") + 0.5 * rankings(rankTwoCandidates, "charlie")
+                    + 0.25 * rankings(rankThreeCandidates, "charlie");
+
             /*
              * 1- First compare and take the larger double value two of the three
              * candidates and then compare the result to the remaining candidate.
@@ -129,13 +131,37 @@ public class CodingChallenge_03 {
                 System.out.println("Charlie");
             }
 
-        } catch (Exception e) {
+        }
+        // * a catch block that catches input Mismatch errors
+        catch (InputMismatchException e) {
             System.out.print("Please enter the names of the candidates in their respective rankings");
-        } finally {
+            System.exit(0);
+        }
+        // * Will close the input regardless
+        finally {
             input.close();
         }
     }
-
+    /*
+     * A method that checks whether the candidate names that
+     * the user entered are one of the three candidates or not
+     */
+    private static void verifyCandidateNames(String[] candidate) {
+        try {
+            for (int i = 0; i < candidate.length; i++) {
+                if (candidate[i].equalsIgnoreCase("alice") == false ||
+                        candidate[i].equalsIgnoreCase("bob") == false ||
+                        candidate[i].equalsIgnoreCase("charlie") == false) {
+                    throw new CustomException("Invalid Candidate name detected. Ending Program...");
+                }
+            }
+        }
+        // * A catch block for the custom Exception
+        catch (CustomException e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+    }
     /*
      * 1- Compare the candidate's name and each element of the array.
      * 2- If there is a match will return add "1" to "ranks" variable.
