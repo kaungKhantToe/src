@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*
- * Custom Exception class that returns a message if the number of voters is zero
+ * Custom Exception class that returns a message depending on what type of error it is
  */
 class CustomException extends Exception {
     public CustomException(String errorMessage) {
@@ -90,6 +90,7 @@ public class CodingChallenge_03 {
                 System.out.println(); // *to format the output as depicted in the example
 
             }
+            // * sending each array to a method that verifies the names of the candidate
             verifyCandidateNames(rankOneCandidates);
             verifyCandidateNames(rankTwoCandidates);
             verifyCandidateNames(rankThreeCandidates);
@@ -100,10 +101,8 @@ public class CodingChallenge_03 {
              * rank (one at a time) and the names of the candidates.
              * 3- The double values returned from each call of the "ranking" method
              * will be adjusted based on their ranks in the votes and added together.
-             * Example- If "alice" is found twice in the rankOneCandidate array, will return
-             * 2.
-             * If "alice" is found once in the rankTwoCandidate array, will return 1 and
-             * multiplied by 0.5.
+             * Example- If "alice" is found twice in the rankOneCandidate array, will return 2.
+             * If "alice" is found once in the rankTwoCandidate array, will return 1 and multiplied by 0.5.
              * adding them all together, the total favor for alice will be 2.5.
              */
             favorForAlice = rankings(rankOneCandidates, "alice") + 0.5 * rankings(rankTwoCandidates, "alice")
@@ -142,6 +141,7 @@ public class CodingChallenge_03 {
             input.close();
         }
     }
+
     /*
      * A method that checks whether the candidate names that
      * the user entered are one of the three candidates or not
@@ -162,6 +162,7 @@ public class CodingChallenge_03 {
             System.exit(0);
         }
     }
+
     /*
      * 1- Compare the candidate's name and each element of the array.
      * 2- If there is a match will return add "1" to "ranks" variable.
