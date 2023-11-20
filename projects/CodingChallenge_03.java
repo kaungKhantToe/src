@@ -101,8 +101,9 @@ public class CodingChallenge_03 {
              * rank (one at a time) and the names of the candidates.
              * 3- The double values returned from each call of the "ranking" method
              * will be adjusted based on their ranks in the votes and added together.
-             * Example- If "alice" is found twice in the rankOneCandidate array, will return 2.
-             * If "alice" is found once in the rankTwoCandidate array, will return 1 and multiplied by 0.5.
+             * Example- If "alice" is found twice in the rankOneCandidate array, return 2.
+             * - If "alice" is found once in the rankTwoCandidate array, will return 1
+             * - The returned "1" will also be multiplied by 0.5.
              * adding them all together, the total favor for alice will be 2.5.
              */
             favorForAlice = rankings(rankOneCandidates, "alice") + 0.5 * rankings(rankTwoCandidates, "alice")
@@ -149,8 +150,8 @@ public class CodingChallenge_03 {
     private static void verifyCandidateNames(String[] candidate) {
         try {
             for (int i = 0; i < candidate.length; i++) {
-                if (candidate[i].equalsIgnoreCase("alice") == false ||
-                        candidate[i].equalsIgnoreCase("bob") == false ||
+                if (candidate[i].equalsIgnoreCase("alice") == false &&
+                        candidate[i].equalsIgnoreCase("bob") == false &&
                         candidate[i].equalsIgnoreCase("charlie") == false) {
                     throw new CustomException("Invalid Candidate name detected. Ending Program...");
                 }
