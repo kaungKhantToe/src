@@ -1,5 +1,14 @@
 import java.util.*;
 
+/*
+ * Custom Exception class that returns a message if the number of voters is zero
+ */
+class ZeroVotersException extends Exception {
+    public ZeroVotersException(String zeroVotersErrorMessage) {
+        super(zeroVotersErrorMessage);
+    }
+}
+
 public class CodingChallenge_03 {
 
     public static void main(String[] args) {
@@ -15,10 +24,28 @@ public class CodingChallenge_03 {
          */
         try {
             int numberOfVoters = input.nextInt();
-            ballot(numberOfVoters, listOfCandidates);
-        } catch (InputMismatchException e) {
+            /*
+             * If number of voters was zero, there would not
+             * be any votes (will throw to custom Exception)
+             */
+            if (numberOfVoters >= 1) {
+                ballot(numberOfVoters, listOfCandidates);
+            } else
+                throw new ZeroVotersException("Zero Voters. Ending Program...");
+        }
+        /*
+         * This catch block is to catch errors when the user
+         * enters either a double value or a string
+         */
+        catch (InputMismatchException e) {
             System.out.print("Please enter a number of Integer value");
-        } finally {
+        }
+        // * The catch block for the custom Exception
+        catch (ZeroVotersException e) {
+            System.out.println(e.getMessage());
+        }
+        // * will close the input regardless if there's an error or not
+        finally {
             input.close();
         }
 
@@ -68,18 +95,24 @@ public class CodingChallenge_03 {
              * rank (one at a time) and the names of the candidates.
              * 3- The double values returned from each call of the "ranking" method
              * will be adjusted based on their ranks in the votes and added together.
-             * Example- If "alice" is found twice in the rankOneCandidate array, will return 2.
-             * If "alice" is found once in the rankTwoCandidate array, will return 1 and multiplied by 0.5.
+             * Example- If "alice" is found twice in the rankOneCandidate array, will return
+             * 2.
+             * If "alice" is found once in the rankTwoCandidate array, will return 1 and
+             * multiplied by 0.5.
              * adding them all together, the total favor for alice will be 2.5.
              */
-            favorForAlice = rankings(rankOneCandidates, "alice") + 0.5 * rankings(rankTwoCandidates, "alice")
-                    + 0.25 * rankings(rankThreeCandidates, "alice");
+            if (rankOneCandidates.length == listOfCandidates.length
+                    && rankTwoCandidates.length == listOfCandidates.length
+                    && rankThreeCandidates.length == listOfCandidates.length) {
+                favorForAlice = rankings(rankOneCandidates, "alice") + 0.5 * rankings(rankTwoCandidates, "alice")
+                        + 0.25 * rankings(rankThreeCandidates, "alice");
 
-            favorForBob = rankings(rankOneCandidates, "bob") + 0.5 * rankings(rankTwoCandidates, "bob")
-                    + 0.25 * rankings(rankThreeCandidates, "bob");
+                favorForBob = rankings(rankOneCandidates, "bob") + 0.5 * rankings(rankTwoCandidates, "bob")
+                        + 0.25 * rankings(rankThreeCandidates, "bob");
 
-            favorForCharlie = rankings(rankOneCandidates, "charlie") + 0.5 * rankings(rankTwoCandidates, "charlie")
-                    + 0.25 * rankings(rankThreeCandidates, "charlie");
+                favorForCharlie = rankings(rankOneCandidates, "charlie") + 0.5 * rankings(rankTwoCandidates, "charlie")
+                        + 0.25 * rankings(rankThreeCandidates, "charlie");
+            }
             /*
              * 1- First compare and take the larger double value two of the three
              * candidates and then compare the result to the remaining candidate.
@@ -102,7 +135,7 @@ public class CodingChallenge_03 {
             input.close();
         }
     }
-    
+
     /*
      * 1- Compare the candidate's name and each element of the array.
      * 2- If there is a match will return add "1" to "ranks" variable.
