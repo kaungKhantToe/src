@@ -132,10 +132,9 @@ public class CodingChallenge_03 {
             }
 
         }
-        // * a catch block that catches input Mismatch errors
-        catch (InputMismatchException e) {
-            System.out.print("Please enter the names of the candidates in their respective rankings");
-            System.exit(0);
+        // * a catch block that catches errors (although there shouldn't be any possible)
+        catch (Exception e) {
+            e.printStackTrace();
         }
         // * Will close the input regardless
         finally {
@@ -153,7 +152,8 @@ public class CodingChallenge_03 {
                 if (candidate[i].equalsIgnoreCase("alice") == false &&
                         candidate[i].equalsIgnoreCase("bob") == false &&
                         candidate[i].equalsIgnoreCase("charlie") == false) {
-                    throw new CustomException("Invalid Candidate name detected. Ending Program...");
+                    throw new CustomException(
+                            "Invalid Candidate name detected. Please run the program again and enter the correct names...");
                 }
             }
         }
