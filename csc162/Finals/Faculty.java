@@ -6,10 +6,9 @@ public class Faculty extends Person {
 	}
 
 	public Faculty(String name, char type, int facultyID) {
-		super(name,type);
-		this.facultyID=facultyID;
+		super(name, type);
+		this.facultyID = facultyID;
 	}
-
 
 	public int getId() {
 		return facultyID;
@@ -18,7 +17,8 @@ public class Faculty extends Person {
 	public void setId(int facultyID) {
 		this.facultyID = facultyID;
 	}
+
 	public String toString() {
-		return "[name=" + getName()+ ", type=" + getType() + ", ID=" + getId() + "]";
+		return  getName() +"\t"  +getType()  + "\t" +getId();
 	}
 }
