@@ -19,6 +19,6 @@ public class Faculty extends Person {
 	}
 
 	public String toString() {
-		return  getName() +"\t"  +getType()  + "\t" +getId();
+		return getName() + "\t" + getType() + "\t" + getId();
 	}
 }

@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Demo {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException{
         long StudentID;
         int FacultyID;
         String AdminID;
@@ -13,9 +13,12 @@ public class Demo {
         Scanner sc = new Scanner(file1);
         Person[] myArray = new Person[3];
         int i = 0;
+
         try {
             System.out.println("<Unsorted>");
             heading();
+            printWriter.println("Name\tType\tID\n" +
+                                "----\t----\t--\n");
             while (sc.hasNext()) {
                 // * read from file and store
                 String name = sc.next();
@@ -33,8 +36,8 @@ public class Demo {
                 // * print array
                 System.out.println(myArray[i].toString());
                 // * write to file
-                printWriter.printf("%s %7s %10s \n", "Name", "Type", "ID");
-                printWriter.printf("%s %7s %10s \n", "----", "----", "--");
+                //printWriter.println("Name\tType\tID");
+                //printWriter.println("----\t----\t--");
                 printWriter.println(myArray[i].toString());
                 i++;
             }
@@ -64,7 +67,7 @@ public class Demo {
             input.close();
         } // * catch block
         catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("Name not found");
         } // * finally block
         finally {
             sc.close();

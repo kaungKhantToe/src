@@ -1,9 +1,6 @@
-Name    Type         ID 
-----    ----         -- 
+Name	Type	ID
+----	----	--
+
 Bob	F	123
-Name    Type         ID 
-----    ----         -- 
 Alex	S	123456789123
-Name    Type         ID 
-----    ----         -- 
 Cathy	A	145
