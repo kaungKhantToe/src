@@ -1,11 +1,6 @@
 package FinalsShortQuestions;
 public class Baby extends FamilyMember{
     private int age;
-    
-    @Override
-    public String toString() {
-        return "Baby [age=" + age + "]";
-    }
 
     public Baby(int age) {
         this.age = age;
