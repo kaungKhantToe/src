@@ -1,12 +1,8 @@
+package FinalsShortQuestions;
 public class Clock {
     private int hr;
     private int min;
     private int sec;
-
-    @Override
-    public String toString() {
-        return "Clock [hr=" + hr + ", min=" + min + ", sec=" + sec + "]";
-    }
 
     public Clock() {
 
