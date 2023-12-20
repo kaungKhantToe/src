@@ -1,3 +1,5 @@
+CREATE DATABASE cm_devices;
+USE cm_devices;
 INSERT INTO devices (deviceID, deviceName, price)
 VALUES (
         'deviceID:int',
@@ -8,5 +10,5 @@ INSERT INTO stock (deviceID, quantity, totalPrice)
 VALUES (
         'deviceID:int',
         'quantity:int',
-        'totalPrice:decimal'
+        'totalPrice: DECIMAL'
     );
