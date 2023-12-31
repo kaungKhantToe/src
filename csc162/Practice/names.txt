@@ -1,0 +1,9 @@
+4 4
+Alvin 1
+Bob 2
+Charlie 3
+Dave 4
+Eugene 5
+Francis 6
+Daniel 7
+Esmeralda 8
