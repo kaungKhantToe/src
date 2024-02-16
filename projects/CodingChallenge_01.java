@@ -68,23 +68,37 @@ public class CodingChallenge_01 {
             wordCount++;
 
             /*
-             * The following variables hold the average number of letter
-             * or sentences per 100 words in the text respectively
+             * Using the number returned from the calculations method, display result to user.
              */
-            Double averageNumberOfSentences = (double) (sentenceCount) / wordCount * 100;
-            Double averageNumberOfLetters = (double) (letterCount) / wordCount * 100;
-
-            /*
-             * By using the formula provided by a readability test called
-             * the "Coleman-Liau index", we can get the grade level of the entered text.
-             */
-            int gradeLevel = (int) ((0.0588 * averageNumberOfLetters) - (0.296 * averageNumberOfSentences) - 15.8);
-
-            System.out.println("The approximate grade level for the provided material is : Grade " + gradeLevel);
+            System.out.println("The approximate grade level for the provided material is : Grade "
+                    + calculations(sentenceCount, letterCount, wordCount));
             input.close();
 
         } catch (Exception e) {
             System.out.print("Error occurred. Please run the program again.");
         }
+    }
+
+    /*
+     * The calculations method uses the count of sentences, 
+     * words and letters to perform the required operations to 
+     * obtain the grade level and return the value to the main method
+     */
+    private static int calculations(int sentenceCount, int letterCount, int wordCount) {
+
+        /*
+         * The following variables hold the average number of letter
+         * or sentences per 100 words in the text respectively
+         */
+        Double averageNumberOfSentences = (double) (sentenceCount) / wordCount * 100;
+        Double averageNumberOfLetters = (double) (letterCount) / wordCount * 100;
+
+        /*
+         * By using the formula provided by a readability test called
+         * the "Coleman-Liau index", we can get the grade level of the entered text.
+         */
+        int gradeLevel = (int) ((0.0588 * averageNumberOfLetters) - (0.296 * averageNumberOfSentences) - 15.8);
+        return gradeLevel;
+
     }
 }
