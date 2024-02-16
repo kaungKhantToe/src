@@ -2,7 +2,7 @@ package Recursion;
 
 import java.util.*;
 
-public class Exercise18_11 {
+public class Recursion3 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter an integer: ");

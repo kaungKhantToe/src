@@ -29,7 +29,7 @@ public class CodingChallenge_03 {
              * If number of voters was zero, there would not
              * be any votes (will throw to custom Exception)
              */
-            if (numberOfVoters >= 1) {
+            if (numberOfVoters >= 2) {
                 ballot(numberOfVoters, listOfCandidates);
             } else
                 throw new CustomException("Zero Voters. Ending Program...");
