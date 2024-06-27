@@ -1,6 +1,6 @@
 👋 Hi, I’m @kaungKhantToe
 
-☕ This repository consists of ...many java programs that I've written in college.
+☕ This repository consists of ...many java programs and web development projects that I've written in college.
 
 ☕ These projects include ...many assignments from classes and clubs alike as well as some custom projects
 
