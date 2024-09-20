@@ -1,0 +1,126 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "CodingChallenge_01",
+            "request": "launch",
+            "mainClass": "CodingChallenge_01",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "CodingChallenge_02",
+            "request": "launch",
+            "mainClass": "CodingChallenge_02",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "CodingChallenge_03",
+            "request": "launch",
+            "mainClass": "CodingChallenge_03",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "CodingChallenge_04",
+            "request": "launch",
+            "mainClass": "CodingChallenge_04",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Demo",
+            "request": "launch",
+            "mainClass": "Demo",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Exercise19_05",
+            "request": "launch",
+            "mainClass": "Exercise19_05",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Exercise19_09",
+            "request": "launch",
+            "mainClass": "Exercise19_09",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "DemoForSQ",
+            "request": "launch",
+            "mainClass": "FinalsShortQuestions.DemoForSQ",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Demo(1)",
+            "request": "launch",
+            "mainClass": "KaungToe_Lab.Demo",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Answer",
+            "request": "launch",
+            "mainClass": "Practice.Answer",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Exercise18_01",
+            "request": "launch",
+            "mainClass": "Recursion.Exercise18_01",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Exercise18_03",
+            "request": "launch",
+            "mainClass": "Recursion.Exercise18_03",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Exercise18_17",
+            "request": "launch",
+            "mainClass": "Recursion.Exercise18_17",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "Exercise18_21",
+            "request": "launch",
+            "mainClass": "Recursion.Exercise18_21",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "bank",
+            "request": "launch",
+            "mainClass": "javaProjects.bank",
+            "projectName": "src_72696ece"
+        },
+        {
+            "type": "java",
+            "name": "deerPopulation",
+            "request": "launch",
+            "mainClass": "javaProjects.deerPopulation",
+            "projectName": "src_72696ece"
+        }
+    ]
+}
