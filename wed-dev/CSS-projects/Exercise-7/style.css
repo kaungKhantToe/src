@@ -4,11 +4,11 @@ h2 {
   color: blueviolet;
 }
 
-.box > .done {
+.box > p{
   color: firebrick;
 }
 
-.box .list {
+.box li{
     color: blue;
 }
 
